@@ -8,4 +8,4 @@ name = 'bob'
 print(name.find('b', 1, 2))
 
 response = request.get("http://api.open-notify.org/iss-now.json")
-print(response.status_code)x
+print(response.status_code)

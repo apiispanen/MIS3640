@@ -131,11 +131,12 @@ def has_duplicates(s):
     output:
 
     """
+    # if there is any letter in s, then it is True. Otherwise, False
     for letter in s:
-        if any(letter for letter in s) is not letter:
+        if any(letter): 
+            return True
+        else:
             return False
-        
-        return True
 print(has_duplicates('cba'))
 #False
 print(has_duplicates('abba'))
@@ -143,22 +144,35 @@ print(has_duplicates('abba'))
     
 
 def has_adjacent_duplicates(s):
+    a=""
+    b="-"
+    for letter in s:
+        if s[0]==letter:
+            break 
+        if (b==a and letter>a) or (letter==a and a>b):#it's previous one 
+            return True
+        b=a
+        a=letter
+        
     """Returns True if there are two same adjacent elements.
-
+    
     s: string or list
 
     returns: bool
 
-    output:
-    >>> print(has_adjacent_duplicates('cba'))
-    False
-    >>> print(has_adjacent_duplicates('abca'))
-    Flase
-    >>> print(has_adjacent_duplicates('abbc'))
-    True
     """
-    return
 
+ # if there is any letter in s, then it is True. Otherwise, False
+    
+
+
+print(has_adjacent_duplicates('cba'))
+    #False
+print(has_adjacent_duplicates('abca'))
+    #Flase
+print(has_adjacent_duplicates('abbc'))
+    #True
+    
 
 def main():
     t = [[1, 2], [3], [4, 5, 6]]
