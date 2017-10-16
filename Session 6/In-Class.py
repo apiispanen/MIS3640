@@ -25,18 +25,6 @@ def factorial(x):
         return x*factorial(x-1)
 #print(factorial(12))
 
-#Fibonacci 
-def fib(x):
-    a=0
-    b=0
-    c=1
-    for i in range(x):
-        a=b
-        b=c
-        c=a+b
-        print(c)
-#fib(10)
-
 #Greatest common denominator
 import math
 math.gcd
