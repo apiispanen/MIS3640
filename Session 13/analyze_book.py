@@ -51,15 +51,22 @@ def most_common(hist):
     hist: map from word to frequency
     returns: list of (frequency, word) pairs
     """
-    pass
-
+    common = {}
+    print(hist.keys())
+    for item in hist.keys():  
+        if item not in common:  
+            common[item]=1 
+        if item in common:
+            common[item]+=1
+    return common
 
 def print_most_common(hist, num=10):
     """Prints the most commons words in a histgram and their frequencies.
     hist: histogram (map from word to frequency)
     num: number of words to print
     """
-    pass
+    return most_common(hist)[1:10]
+
 
 
 def subtract(d1, d2):
@@ -67,35 +74,43 @@ def subtract(d1, d2):
     d1, d2: dictionaries
     """
     pass
+    d={}
+    for key in d1.keys():
+        if key in d2:
+            d[key] = key
 
+    return d    
 
-def random_word(hist):
+def random_word(hist): 
+
+    print(random.choice(''.join(k*v for k,v in hist.items())))
+    
     """Chooses a random word from a histogram.
     The probability of each word is proportional to its frequency.
     """
-    pass
+    
 
 
 def main():
     hist = process_file('Book.txt', skip_header=True)
     print('Total number of words:', total_words(hist))
     print('Number of different words:', different_words(hist))
-
-    # t = most_common(hist)
-    # print('The most common words are:')
+    print(most_common(hist))
+    #t = most_common(hist)
+    #print('The most common words are:')
     # for freq, word in t[0:20]:
     #     print(word, '\t', freq)
 
-    # words = process_file('words.txt', skip_header=False)
+    words = process_file('words.txt', skip_header=False)
 
-    # diff = subtract(hist, words)
-    # print("The words in the book that aren't in the word list are:")
-    # for word in diff.keys():
-    #     print(word, end=' ')
+    diff = subtract(hist, words)
+    print("The words in the book that aren't in the word list are:")
+    for word in diff.keys():
+        print(word, end=' ')
 
     # print("\n\nHere are some random words from the book")
     # for i in range(100):
-    #     print(random_word(hist), end=' ')
+    print(random_word(hist))
 
 
 if __name__ == '__main__':
