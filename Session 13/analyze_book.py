@@ -51,29 +51,28 @@ def most_common(hist):
     hist: map from word to frequency
     returns: list of (frequency, word) pairs
     """
-    common = {}
-    print(hist.keys())
-    for item in hist.keys():  
-        if item not in common:  
-            common[item]=1 
-        if item in common:
-            common[item]+=1
-    return common
+    t = []
+    for key, value in hist.items():
+        t.append((value, key))
+
+    t.sort()
+    t.reverse()
+    return t
 
 def print_most_common(hist, num=10):
     """Prints the most commons words in a histgram and their frequencies.
     hist: histogram (map from word to frequency)
     num: number of words to print
-    """
-    return most_common(hist)[1:10]
-
-
+    """ 
+    t = most_common(hist)
+    print('The most common words are:')
+    for freq, word in t[:num]:
+        print(word, '\t', freq)
 
 def subtract(d1, d2):
     """Returns a dictionary with all keys that appear in d1 but not d2.
     d1, d2: dictionaries
     """
-    pass
     d={}
     for key in d1.keys():
         if key in d2:
@@ -82,9 +81,12 @@ def subtract(d1, d2):
     return d    
 
 def random_word(hist): 
+    t = []
+    for word, freq in hist.items():
+        t.extend([word] * freq)
 
-    print(random.choice(''.join(k*v for k,v in hist.items())))
-    
+    return random.choice(t)
+
     """Chooses a random word from a histogram.
     The probability of each word is proportional to its frequency.
     """
