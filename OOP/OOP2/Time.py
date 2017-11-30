@@ -4,19 +4,19 @@ class Time:
     attributes: hour, minute, second
     """
 
-# time = Time()
-# time.hour = 1
-# time.minute = 50
-# time.second = 30
+time = Time()
+time.hour = 1
+time.minute = 50
+time.second = 30
 
-# print(time.hour, time.minute, time.second)
+print(time.hour, time.minute, time.second)
 
-# later = Time()
-# later.hour = time.hour
-# later.minute = time.minute + 5
-# later.second = time.second
+later = Time()
+later.hour = time.hour
+later.minute = time.minute + 5
+later.second = time.second
 
-# print(later.hour, later.minute, later.second)
+print(later.hour, later.minute, later.second)
 
 """"""""""""""""""""""""""""""""""""
 # Exercise 1
@@ -24,21 +24,29 @@ class Time:
 
 
 def print_time(t):
+    print('{:2d}:{:2d}:{:2d}'.format(time.hour,time.minute,time.second))
+
     """Prints a string representation of the time.
 
     t: Time object
     """
 
-# print_time(time)
-# print_time(later)
+print_time(time)
+print_time(later)
 
 
 def is_after(t1, t2):
     """Returns True if t1 is after t2; false otherwise."""
-
-
-# print(is_after(time, later))
-# print(is_after(later, time))
+    if t1.hour > t2.hour:
+        return True
+    elif t1<t2.hour:
+        return False
+    elif t1.minute > t2.minute:
+        return True
+    elif t1.minute < t2.minute
+        
+print(is_after(time, later))
+print(is_after(later, time))
 """"""""""""""""""""""""""""""""""""
 # Prototyping
 """"""""""""""""""""""""""""""""""""
@@ -53,6 +61,7 @@ def add_time(t1, t2):
 
     TO-DO: improve this function
     """
+        
     sum = Time()
     sum.hour = t1.hour + t2.hour
     sum.minute = t1.minute + t2.minute
