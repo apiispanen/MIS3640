@@ -1,2 +1,2 @@
-def investment_calculator(investment, status):
+def investment_calculator(investment, popularity):
     pass

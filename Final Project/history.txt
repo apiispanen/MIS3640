@@ -1,12 +1,3 @@
 
-Foo fighters: 85
-85: 85
-85: 85
-84: 84
-Foo Fighters: 85
-NIRVANA: 84
-KATY+PERRY: 90
-FOO+FIGHTERS: 85
-THE-KILLERS: 85
-THE+KILLERS: 85,85,85
-Katy Perry: 90,90,90,90,85
+foo fighters: 85,85,85
+katy perry: 90
