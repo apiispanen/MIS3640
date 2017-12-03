@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- Template by html.am -->
 <html>
@@ -94,34 +93,30 @@
 					<main id="contentbar">
 						<div class="article">
 							<!-- Write your comments here -->
-							<!DOCTYPE html>
-                            <html lang="en">
-                            <head>
-                                <meta charset="UTF-8">
-                                <title>artistresults</title>
-                            </head>
-                            
-                            <body bgcolor='#ffffff'>
-                            <h1>Artist Popularity</h1>
-                            <p>
-                                Results for {{intad}}:
-                            </p>
-                            <p>
-                                                
-                                {{intad}}'s popularity is {{pop_score}} (Out of 100). 
-                                Your initial investment was {{intinv}}. 
-                            </p>
-                            
-                            <p>
-                                {{details}}
-                            </p>
-                            <img src={{picurl}} alt="Mountain View" height = '100'>
-                            <p> 
-                                
-                                {{result}}.
-                            </p>
-                            </body>
-                            </html>                            
+							<h3>Find out if your investment in music has grown!</h3>
+							<body bgcolor='#84AA33'></body>
+								</body>
+								<form method="POST" name="finder">
+									<p>
+										Enter in investment amount:<br>
+										<input type='number' name="invamt"><br>
+										</p>
+									<p>
+									Enter in artist name:<br>
+									<input type="text" name="artname"><br>
+									</p>
+									<p>
+									<input type="submit" value="Find popularity updates">
+									</p>
+									{% if error %}
+									<p style='color:red'>Please enter an address.</p>
+									{% endif %}
+								</form>
+								<!-- Write your comments here
+							<h2>HEADER 2</h2>
+							<h4>HEADER 4</h4>
+							<h3>HEADER 3</h3>
+							<p>WHAT IS GOING ON AHHHHHHH</p> -->
 						</div>
 					</main>
 					

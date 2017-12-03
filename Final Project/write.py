@@ -1,10 +1,11 @@
 from artist import search
 def store(name):
     entry = str(search(name))
+    entry = entry.lower()
     b = open('history.txt', 'r')
     a = open('history.txt', 'a')
     if name not in b.read():
-        a.write(name+': ')
+        a.write('\n'+ name+': ')
     else:
         a.write(',')
     a.write(entry)
@@ -28,6 +29,5 @@ def detail(status):
 #             i-=1
 #             print(thing)
 #         except
-# x =store('Katy Perry')
-# print(detail(x))
-# initial(x)
+x =store('Foo Fighters')
+print(detail(x))

@@ -1,1 +1,12 @@
-Katy Perry: 90,90,90,90,90,90,90,90,90,90Lorde: 87,90,87Foo Fighters: 85
+
+Foo fighters: 85
+85: 85
+85: 85
+84: 84
+Foo Fighters: 85
+NIRVANA: 84
+KATY+PERRY: 90
+FOO+FIGHTERS: 85
+THE-KILLERS: 85
+THE+KILLERS: 85,85,85
+Katy Perry: 90,90,90,90,85

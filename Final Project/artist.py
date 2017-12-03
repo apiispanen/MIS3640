@@ -7,8 +7,12 @@ import pprint
 
 Client_id = '1a3a8ea947e0445f88fa68c4056d0e2a'
 Client_secret = '5ed0d9e6382143d2882915ba397271e4'
-Token = 'Bearer BQAHFjzUrlVgWqcRQHhBkWOnqUAU7jyYjzzRrOm0qfMU7mHidWcTfnsLczCY9IrrqS_SSP8cM5-qbiP8nW0m5nb7Wfou0VZd4OAaWXYU2WGbGSFkko2uNzDLYGEmNQieXxog3mo1A9_K57NOSFH4aFrBg7bcSYY6FNKl'
+Token = 'Bearer BQBWJExDJWGVtBBq6Gtbqdq_dEUPxHJ_ysMvaJc-3K2fExldgxkbQ0-CQGNaZixAq2i03mf5seARLaDtBwepfFkNNl_cnYK5OdvOORQG8trlDl-aZzGBqBwgRZLK_nHGTqXh_Viklwo4xyBdPdaEgT0ipI7uetTmrwny'
 
+'''
+Produces the popularity data from Spotify based on an artist search term.
+
+'''
 
 def search(name):
     headers = {'Authorization':Token}
@@ -19,6 +23,11 @@ def search(name):
     b = a.json()
     popularity = b['artists']['items'][0]['popularity']
     return popularity
+
+'''
+Based on an artist ID, return the popularity of the artist. 
+
+'''
 
 def popularity(artistID):
     id = artistID

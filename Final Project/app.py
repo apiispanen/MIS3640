@@ -1,7 +1,12 @@
 from flask import Flask, render_template, request
 
 import write
+#'write' writes the results into a .txt file
 import artist
+#this is the main artist searcher, through Spotify
+import imagesearch
+#this was an added extra, going into Pixabay and retrieving the top result to give an image of the artist or a related picture!
+
 
 app = Flask(__name__)
 
@@ -9,6 +14,10 @@ app.config['DEBUG'] = True
 
 app.secret_key = "Some secret string here"
 
+'''
+App Processes popularity data through the Spotify API and updates data based on initial investment at a certain popularity value. 
+
+'''
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -18,23 +27,31 @@ def index():
         pop_score = artist.search(intad)
         result = write.store(intad)
         details = write.detail(result)
-        picurl = 'https://www.accessrx.com/blog/wp-content/uploads/2015/10/skeptical-man.jpg'
+        picurl = imagesearch.get_image(intad)
 
         if result:
             return render_template('results.html',intad=intad, result=result, details = details, picurl=picurl, pop_score=pop_score, intinv = intinv)
         else:
-            return render_template('index.html', error=True)
-    return render_template('index.html', error=None)
+            return render_template('hello.html', error=True)
+    return render_template('hello.html', error=None)
 
+'''
+Beta Code for testing
 
+'''
 
-@app.route('/hello/')
-@app.route('/hello/<name>')
+@app.route('/results/')
+@app.route('/results/<name>')
 def hello(name=None):
     if name:
         name = name.upper()
-    return render_template('hello.html', name=name)
-
+        pop_score = artist.search(name)
+        result = write.store(name)
+        details = write.detail(result)
+        picurl = imagesearch.get_image(name)
+        return render_template('results.html', name=name, pop_score = pop_score, intad=name, result=result, details = details, picurl=picurl, intinv = 0)
+    else:
+        return render_template('hello.html', name=name)
 
 
 if __name__ == '__main__':
