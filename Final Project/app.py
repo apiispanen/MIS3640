@@ -21,19 +21,21 @@ App Processes popularity data through the Spotify API and updates data based on 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    history = artist.history()
     if request.method == 'POST':
         intad = request.form['artname']
         intinv= request.form['invamt']
+        if not intinv:
+            intinv = 0
         pop_score = artist.search(intad)
-        result = write.store(intad, intinv)
-        details = write.detail(result)
-        picurl = imagesearch.get_image(intad)
-
-        if result:
-            return render_template('results.html',intad=intad, result=result, details = details, picurl=picurl, pop_score=pop_score, intinv = intinv)
+        if pop_score:
+            result = write.store(intad, intinv)
+            details = write.detail(result)
+            picurl = imagesearch.get_image(intad)
+            return render_template('results.html',intad=intad, result=result, details = details, picurl=picurl, pop_score=pop_score, intinv = intinv, history = history)
         else:
-            return render_template('hello.html', error=True)
-    return render_template('hello.html', error=None)
+            return render_template('hello.html', error=True, history = history)
+    return render_template('hello.html', error=None, history = history)
 
 '''
 Beta Code for testing
@@ -46,10 +48,12 @@ def hello(name=None):
     if name:
         name = name.upper()
         pop_score = artist.search(name)
+        intinv = 0
         result = write.store(name, intinv)
         details = write.detail(result)
         picurl = imagesearch.get_image(name)
-        return render_template('results.html', name=name, pop_score = pop_score, intad=name, result=result, details = details, picurl=picurl, intinv = 0)
+        history = artist.history()
+        return render_template('results.html', name=name, pop_score = pop_score, intad=name, result=result, details = details, picurl=picurl, intinv = 0,history = history)
     else:
         return render_template('hello.html', name=name)
 

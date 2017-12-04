@@ -7,7 +7,7 @@ import pprint
 
 Client_id = '1a3a8ea947e0445f88fa68c4056d0e2a'
 Client_secret = '5ed0d9e6382143d2882915ba397271e4'
-Token = 'Bearer BQBlnHE_TU4i4OTZp4mFf2VftegRTuP1_-U7eOXL9O3JLQnfH2FhWwcroi-q1QCxPwcTktzvMf40CvKeNr6djPGKKAueCz-XRX3Pm6hb1KmTyhPs7bGXunlU2mkUL-b5mtNk5v77yYuTZkGWY5tHWxk3OfqZgOVAXIwnYFs'
+Token = 'Bearer BQCmRFLM83_a5asdy30I9WCfnVS3QeXxOVgzyqn6d9VGIipZbVs1GdfcwBuuslOtlfuT4PtQn85zAnrVhqtV2TQ99AgUZ6lWVN5AgKhTJq4YAiLztYH3Ki6uOrDnfDoYAs8K9TOePsZPIeErPj6jUTKImUgMEsK2KbYLVTs'
 
 '''
 Produces the popularity data from Spotify based on an artist search term.
@@ -21,8 +21,11 @@ def search(name):
     params = {'q':name, 'type':'artist'}
     a = requests.get(url, headers = headers, params =params)
     b = a.json()
-    popularity = b['artists']['items'][0]['popularity']
-    return popularity
+    if len(b['artists']['items'])<1:
+        return False
+    else:
+        popularity = b['artists']['items'][0]['popularity']
+        return popularity
 
 '''
 Based on an artist ID, return the popularity of the artist. 
@@ -36,9 +39,19 @@ def popularity(artistID):
     a = requests.get(url, headers = headers )
     return a.json()['popularity']
 
+def history():
+    a = open('history.txt', 'r')
+    text_split = a.readlines()
+    a = []
+    for line in text_split:
+        a.append(line[:line.find(':')]+', starting popularity:'+ line[line.find(':')+1:line.find(',')])
+    
+    return a 
+        
 
 aid='1vCWHaC5f2uS3yhpwWbIA6'
 
+print(history())
 # print(popularity(aid))
 # print(search('Katy Perry'))
 

@@ -94,42 +94,45 @@
 						<h3>Find out if your investment in music has grown!</h3>
 						<div class="article">
 							<!-- Write your comments here -->
-							
+						
 							<body bgcolor='#84AA33'></body>
 								</body>
 								<form method="POST" name="finder">
 									<p>
-										Enter in investment amount:<br>
+										Enter in an intial investment amount:<br>
 										<input type='number' name="invamt"><br>
 										</p>
+										 
 									<p>
 									Enter in artist name:<br>
 									<input type="text" name="artname"><br>
 									</p>
 									<p>
-									<input type="submit" value="Find popularity updates">
+									<input type="submit" value="Find popularity updates">	
 									</p>
+									<p>You can only enter an initial investment once. Future records will be discarded.</p>
 									{% if error %}
-									<p style='color:red'>Please enter an address.</p>
+									<p style='color:red'>No results found. Please try again.</p>
 									{% endif %}
 								</form>
 								<!-- Write your comments here
 							<h2>HEADER 2</h2>
 							<h4>HEADER 4</h4>
-							<h3>HEADER 3</h3>
-							<p>WHAT IS GOING ON AHHHHHHH</p> -->
+							 <h3>HEADER 3</h3> -->
+							<!-- <p>WHAT IS GOING ON AHHHHHHH</p> -->
 						</div>
 					</main>
 					
 					<nav id="sidebar">
 						<div class="widget">
-							<h3>Left heading</h3>
+							<h3>Investment History</h3>
 							<ul>
-							<li><a href="#">Link 1</a></li>
-							<li><a href="#">Link 2</a></li>
-							<li><a href="#">Link 3</a></li>
-							<li><a href="#">Link 4</a></li>
-							<li><a href="#">Link 5</a></li>
+							
+							<li><a href="#">{{history[0]}}</a></li>
+							<li><a href="#">{{history[1]}}</a></li>
+							<li><a href="#">{{history[2]}}</a></li>
+							<li><a href="#">{{history[3]}}</a></li>
+							<li><a href="#">{{history[4]}}</a></li>
 							</ul>
 						</div>
 					</nav>

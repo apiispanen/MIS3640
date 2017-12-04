@@ -103,9 +103,8 @@
                             
                             <body bgcolor='#ffffff'>
                             <h1>Artist Popularity</h1>
-                            <p>
-                                Results for {{intad}}:
-                            </p>
+                            <h4>
+                                Results for {{intad}}:</h4>
                             <p>
                                                 
                                 {{intad}}'s popularity is {{pop_score}} (Out of 100). 
@@ -117,7 +116,7 @@
                             </p>
                             <img src={{picurl}} alt="Mountain View" height = '100'>
                             <p> 
-                                
+                                <a href = 'http://127.0.0.1:5000/' > Look For another.</a>
                                 {{result}}.
                             </p>
                             </body>
@@ -127,14 +126,14 @@
 					
 					<nav id="sidebar">
 						<div class="widget">
-							<h3>Left heading</h3>
-							<ul>
-							<li><a href="#">Link 1</a></li>
-							<li><a href="#">Link 2</a></li>
-							<li><a href="#">Link 3</a></li>
-							<li><a href="#">Link 4</a></li>
-							<li><a href="#">Link 5</a></li>
-							</ul>
+                            <h3>Investment History</h3>
+                            <ul>
+                                
+                            <li><a href="#">{{history[0]}}</a></li>
+                            <li><a href="#">{{history[1]}}</a></li>
+                            <li><a href="#">{{history[2]}}</a></li>
+                            <li><a href="#">{{history[3]}}</a></li>
+                            <li><a href="#">{{history[4]}}</a></li>
 						</div>
 					</nav>
 					
