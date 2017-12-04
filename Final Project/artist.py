@@ -7,7 +7,7 @@ import pprint
 
 Client_id = '1a3a8ea947e0445f88fa68c4056d0e2a'
 Client_secret = '5ed0d9e6382143d2882915ba397271e4'
-Token = 'Bearer BQCmRFLM83_a5asdy30I9WCfnVS3QeXxOVgzyqn6d9VGIipZbVs1GdfcwBuuslOtlfuT4PtQn85zAnrVhqtV2TQ99AgUZ6lWVN5AgKhTJq4YAiLztYH3Ki6uOrDnfDoYAs8K9TOePsZPIeErPj6jUTKImUgMEsK2KbYLVTs'
+Token = 'Bearer BQBKw1vXJItaKWVfEHQwj0um1t78C4yrwQ2U9wmYFdLSYc2UmtB2xqhfD3NeLD5CezzNrEOnh1IVonv2d8xhhSShWIUiQTw2GPcSVY6Q-de0vkBZn0fUi5Koe0UoJVyVuYpGdHMiFPYbrmQJ9dmXCux6hq0TTMjC8K3M6D4'
 
 '''
 Produces the popularity data from Spotify based on an artist search term.
@@ -51,7 +51,7 @@ def history():
 
 aid='1vCWHaC5f2uS3yhpwWbIA6'
 
-print(history())
+# print(history())
 # print(popularity(aid))
 # print(search('Katy Perry'))
 

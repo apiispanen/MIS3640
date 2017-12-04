@@ -43,7 +43,8 @@ def detail(status):
     os.rename('history2.txt', 'history.txt')
     while True:
         try:
-            return 'The current popularity of the artist has upgraded by {} since the initial view.'.format(int(status[-5]+status[-4])-int(status[status.find(':')+1:status.find(':')+4]))
+            change = int(status[-5]+status[-4])-int(status[status.find(':')+1:status.find(':')+4])
+            return 'The current popularity of the artist has upgraded by {} since the initial view.'.format(change)
             break
         except ValueError:
             return 'No analysis available. This is the initial entry.'

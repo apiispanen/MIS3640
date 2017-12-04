@@ -6,7 +6,7 @@ import artist
 #this is the main artist searcher, through Spotify
 import imagesearch
 #this was an added extra, going into Pixabay and retrieving the top result to give an image of the artist or a related picture!
-
+import invcalc
 
 app = Flask(__name__)
 
@@ -32,7 +32,8 @@ def index():
             result = write.store(intad, intinv)
             details = write.detail(result)
             picurl = imagesearch.get_image(intad)
-            return render_template('results.html',intad=intad, result=result, details = details, picurl=picurl, pop_score=pop_score, intinv = intinv, history = history)
+            value = invcalc.investment_calculator(int(intinv), int(result[result.find(':')+1:result.find(':')+4]),pop_score)
+            return render_template('results.html',intad=intad, result=result, details = details, picurl=picurl, pop_score=pop_score, intinv = intinv, history = history, value = value)
         else:
             return render_template('hello.html', error=True, history = history)
     return render_template('hello.html', error=None, history = history)
