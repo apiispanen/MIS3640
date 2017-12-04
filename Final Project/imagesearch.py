@@ -8,4 +8,6 @@ def get_image(search_term):
     params = {'key':key, 'q': q}
     a = requests.get(url, params=params)
     b = a.json()
+    if ValueError:
+            return 'http://canacopegdl.com/images/shrug/shrug-8.jpg'
     return b['hits'][0]['previewURL']

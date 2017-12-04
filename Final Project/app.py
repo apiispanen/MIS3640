@@ -25,7 +25,7 @@ def index():
         intad = request.form['artname']
         intinv= request.form['invamt']
         pop_score = artist.search(intad)
-        result = write.store(intad)
+        result = write.store(intad, intinv)
         details = write.detail(result)
         picurl = imagesearch.get_image(intad)
 
@@ -46,7 +46,7 @@ def hello(name=None):
     if name:
         name = name.upper()
         pop_score = artist.search(name)
-        result = write.store(name)
+        result = write.store(name, intinv)
         details = write.detail(result)
         picurl = imagesearch.get_image(name)
         return render_template('results.html', name=name, pop_score = pop_score, intad=name, result=result, details = details, picurl=picurl, intinv = 0)

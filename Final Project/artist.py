@@ -7,7 +7,7 @@ import pprint
 
 Client_id = '1a3a8ea947e0445f88fa68c4056d0e2a'
 Client_secret = '5ed0d9e6382143d2882915ba397271e4'
-Token = 'Bearer BQBWJExDJWGVtBBq6Gtbqdq_dEUPxHJ_ysMvaJc-3K2fExldgxkbQ0-CQGNaZixAq2i03mf5seARLaDtBwepfFkNNl_cnYK5OdvOORQG8trlDl-aZzGBqBwgRZLK_nHGTqXh_Viklwo4xyBdPdaEgT0ipI7uetTmrwny'
+Token = 'Bearer BQBlnHE_TU4i4OTZp4mFf2VftegRTuP1_-U7eOXL9O3JLQnfH2FhWwcroi-q1QCxPwcTktzvMf40CvKeNr6djPGKKAueCz-XRX3Pm6hb1KmTyhPs7bGXunlU2mkUL-b5mtNk5v77yYuTZkGWY5tHWxk3OfqZgOVAXIwnYFs'
 
 '''
 Produces the popularity data from Spotify based on an artist search term.
