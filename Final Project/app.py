@@ -40,7 +40,6 @@ def index():
 
 '''
 Beta Code for testing
-
 '''
 
 @app.route('/results/')

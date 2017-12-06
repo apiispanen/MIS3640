@@ -2,12 +2,13 @@
 The popularity of the artist: The value will be between 0 and 100, with 100 being the most popular. The artist's popularity is calculated from the popularity of all the artist's tracks.
 
 """
+from auth import req_token
 import requests
 import pprint
 
 Client_id = '1a3a8ea947e0445f88fa68c4056d0e2a'
 Client_secret = '5ed0d9e6382143d2882915ba397271e4'
-Token = 'Bearer BQBKw1vXJItaKWVfEHQwj0um1t78C4yrwQ2U9wmYFdLSYc2UmtB2xqhfD3NeLD5CezzNrEOnh1IVonv2d8xhhSShWIUiQTw2GPcSVY6Q-de0vkBZn0fUi5Koe0UoJVyVuYpGdHMiFPYbrmQJ9dmXCux6hq0TTMjC8K3M6D4'
+Token = req_token()
 
 '''
 Produces the popularity data from Spotify based on an artist search term.
